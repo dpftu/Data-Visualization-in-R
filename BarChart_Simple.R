@@ -1,11 +1,7 @@
-
-
 library(readxl)
 library(readr)
 library(tidyverse)
 library(pdftools)
-
-
 
 
 pdf_file <- 'BarCharts_Simple.pdf'
@@ -24,16 +20,12 @@ par(
 )
 
 
-
+# Data preparation;
 read_excel('ipsos.xlsx',
            sheet = 1,
            col_names = TRUE) %>% 
   arrange(Percent) -> IPSOS
 attach(IPSOS)
-
-
-#-------------------------------------------------------------------------------------------------------------------------#
-
 
 barplot(Percent,names.arg = FALSE,horiz = TRUE,
         border = NA,xlim = c(0,100),col = 'grey',
@@ -59,19 +51,16 @@ for (i in 1:nrow(IPSOS)) {
 
 # Add other rectangulars:
 
-
 rect(0,-0.5,20,28,col = rgb(191,239,255,80,maxColorValue = 255),border = NA)
 rect(20,-0.5,40,28,col = rgb(191,239,255,120,maxColorValue = 255),border = NA)
 rect(40,-0.5,60,28,col = rgb(191,239,255,80,maxColorValue = 255),border = NA)
 rect(60,-0.5,80,28,col = rgb(191,239,255,120,maxColorValue = 255),border = NA)
 rect(80,-0.5,100,28,col = rgb(191,239,255,80,maxColorValue = 255),border = NA)
 
-
 IPSOS %>% 
   mutate(myValue2 = ifelse(Country %in% c('Brazil','Germany'),Percent,0)) %>% 
   .[['myValue2']] -> myValue2
 myColor2 <- rgb(255,0,210,maxColorValue = 255)
-
 
 barplot(myValue2,names.arg = FALSE,horiz = TRUE,
         border = NA,xlim = c(0,100),col = myColor2,
@@ -81,7 +70,6 @@ barplot(myValue2,names.arg = FALSE,horiz = TRUE,
 arrows(45,-0.5,45,20.5,lwd = 1.5,length = 0,xpd = TRUE,col = 'dodgerblue')
 arrows(45,-0.5,45,-0.75,lwd = 3,length = 0,xpd = TRUE)
 arrows(45,20.5,45,20.75,lwd = 3,length = 0,xpd = TRUE)
-
 
 text(41,20.5,'Average',adj = 1,xpd = TRUE,cex = 0.65,font = 3)
 text(44,20.5,'45',adj = 1,xpd = TRUE,cex = 0.65,family = 'Lato',font = 4)
