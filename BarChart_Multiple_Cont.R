@@ -22,6 +22,8 @@ myC_v166 <- "Men should take as much responsibility\nas women for their househol
 myNames <- c(myC_v165, myC_v164, myC_v163, myC_v162, myC_v161, myC_v160, myC_v159)
 
 
+# Create artificial data;
+
 c1 <- c(2,40,38,12,8)
 c2 <- c(4,20,35,15,26)
 c3 <- c(5,10,34,40,10)
@@ -30,7 +32,7 @@ c5 <- c(3,40,39,13,5)
 c6 <- c(3,37,42,13,5)
 c7 <- c(4,30,42,16,8)
 
-# Convert percent::
+# Convert into percentage;
 
 d1 <- c1/sum(c1)
 d2 <- c2/sum(c2)
@@ -42,13 +44,10 @@ d7 <- c6/sum(c7)
 
 # Data preparation 
 
-
 myData1 <- matrix(c(d1,d2,d3,d4,d5,d6,d7),byrow = FALSE,nrow = 5)
 myData1 <- myData1*100
 myData1
 myResonpse <- c("n.a./dont't know","Agree strongly","Agree","Disagree","Disagree strongly")
-
-##---------------------------------------------------------------------------------------------------------------
 
 
 pdf_file <- 'BarChart_Multiple_Cont.pdf'
