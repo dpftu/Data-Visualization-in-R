@@ -1,11 +1,9 @@
-
 library(readxl)
 library(readr)
 library(tidyverse)
 library(pdftools)
 library(graphics)
 library(RColorBrewer)
-
 
 
 myC_v159 <- "A working mother can establish just as warm and\nsecure an environment as a non-working mother"
@@ -30,7 +28,6 @@ c5 <- c(3,40,39,13,5)
 c6 <- c(3,37,42,13,5)
 c7 <- c(4,30,42,16,8)
 
-
 # Convert into percentage;
 
 d1 <- c1/sum(c1)
@@ -41,14 +38,11 @@ d5 <- c5/sum(c5)
 d6 <- c6/sum(c6)
 d7 <- c6/sum(c7)
 
-
 # Data preparation 
-
 
 myData1 <- matrix(c(d1,d2,d3,d4,d5,d6,d7),byrow = FALSE,nrow = 5)
 myData1 <- myData1*100
 myResonpse <- c("n.a./dont't know","Agree strongly","Agree","Disagree","Disagree strongly")
-
 
 
 pdf_file <- 'BarChart_Multiple_Cont1.pdf'
@@ -72,6 +66,7 @@ myC3 <- rgb(255,138,238,maxColorValue = 255)
 myC4 <- rgb(255,0,210,maxColorValue = 255)
 myColors <- c('grey',myC1,myC2,myC3,myC4)
 
+# Barplot;
 barplot(-rep(100,7),names.arg = myNames,cex.names = 1.1,horiz = TRUE,
         border = par('bg'),xlim = c(-100,70),col = myColors[1],axes = FALSE)
 barplot(-(100-myData1[1,]),names.arg = myNames,cex.names = 1.1,horiz = TRUE,
@@ -103,9 +98,7 @@ mtext('All values in percent',side = 3,line = 1,cex = 0.95,adj = 1,font = 3)
 mtext('Redesigned by: Phan Tien Dung\nUniversity of Tuebingen, Germany',
       side = 1,line = 7,adj = 1,cex = 1.05,font = 3,family = 'Lato Black')
 
-
 dev.off()
-
 
 # Convert image form;
 
