@@ -7,8 +7,6 @@ library(graphics)
 library(RColorBrewer)
 
 
-
-
 myC_v159 <- "A working mother can establish just as warm and\nsecure an environment as a non-working mother"
 myC_v160 <- "A pre-school child is likely to suffer if\nhis or her mother is working"
 myC_v161 <- "A job is alright, but what most women\nreally want is a home and children"
@@ -34,7 +32,7 @@ d5 <- c5/sum(c5)
 d6 <- c6/sum(c6)
 d7 <- c6/sum(c7)
 
-# Data preparation 
+# Hypothetical Data;
 
 myData1 <- matrix(c(d1,d2,d3,d4,d5,d6,d7),byrow = FALSE,nrow = 5)
 myData1 <- myData1*100
