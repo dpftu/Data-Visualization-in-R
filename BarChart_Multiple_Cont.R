@@ -1,6 +1,3 @@
-
-
-
 library(readxl)
 library(readr)
 library(tidyverse)
@@ -9,7 +6,6 @@ library(graphics)
 
 # Different kind of barchart multiple;
 # The data was created by author.
-
 
 myC_v159 <- "A working mother can establish just as warm and\nsecure an environment as a non-working mother"
 myC_v160 <- "A pre-school child is likely to suffer if\nhis or her mother is working"
@@ -22,7 +18,7 @@ myC_v166 <- "Men should take as much responsibility\nas women for their househol
 myNames <- c(myC_v165, myC_v164, myC_v163, myC_v162, myC_v161, myC_v160, myC_v159)
 
 
-# Create artificial data;
+# Create hypothetical data;
 
 c1 <- c(2,40,38,12,8)
 c2 <- c(4,20,35,15,26)
