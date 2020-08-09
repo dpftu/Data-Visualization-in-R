@@ -1,14 +1,8 @@
-
-
-
-
 library(readxl)
 library(readr)
 library(tidyverse)
 library(pdftools)
 library(graphics)
-
-
 
 
 myC_v159 <- "A working mother can establish just as warm and\nsecure an environment as a non-working mother"
