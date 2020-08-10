@@ -1,6 +1,3 @@
-
-
-
 library(readxl)
 library(readr)
 library(tidyverse)
@@ -39,7 +36,7 @@ c <- c(0,154.7)
 d <- c(0,185.8)
 (y <- as.matrix(data.frame(a,b,c,d)))
 
-# Labels!!!!
+# Labels
 
 label1 <- "Humanities and social sciences"
 label2 <- "Life sciences"
