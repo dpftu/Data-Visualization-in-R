@@ -24,8 +24,6 @@ read_excel('ipsos.xlsx',
 attach(IPSOS)
 
 
-#--------------------------------------------------------------------------------------------------------------------------------------------#
-
 barplot(Percent,names.arg = FALSE,horiz = TRUE,
         border = NA,xlim = c(0,100),col = 'grey',
         cex.names = 0.85,axes = FALSE) -> x
