@@ -1,5 +1,3 @@
-
-
 'Bar Proportion ver1'
 
 
