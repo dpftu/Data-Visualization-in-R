@@ -1,4 +1,3 @@
-
 'Pie Chart ver1'
 
 library(graphics)
@@ -8,8 +7,6 @@ library(mosaic)
 library(stringr)
 library(plotrix)
 library(pdftools)
-
-
 
 pdf_file <- 'PieChartver1.pdf'
 cairo_pdf(pdf_file,bg = 'grey98',height = 3.75,width = 9)
