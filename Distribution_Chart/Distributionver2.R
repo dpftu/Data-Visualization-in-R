@@ -25,9 +25,6 @@ for (i in 1:ncol(myMen)) {
   
 }
 
-
-
-
 pdf_file <- 'Distributionver2.pdf'
 cairo_pdf(pdf_file,bg = 'grey98',height = 9,width = 12)
 par(
@@ -49,7 +46,6 @@ ifelse(myWomenSurplus < 0,0,myWomenSurplus) -> myWomenSurplus
 myMen$Y1970 - myWomen$Y1970 -> myMenSurplus
 ifelse(myMenSurplus < 0,0,myMenSurplus) -> myMenSurplus
 
-
 right <- data.frame(myWomen$Y1970-myWomenSurplus,myWomenSurplus)
 left <- data.frame(myMen$Y1970-myMenSurplus,myMenSurplus)
 
@@ -57,7 +53,6 @@ left <- data.frame(myMen$Y1970-myMenSurplus,myMenSurplus)
 
 myMark_right <- right
 myMark_right[!(rownames(myMark_right) %in% seq(10,90,by = 10)),] <- 0
-
 
 myMark_left <- left
 myMark_left[!(rownames(myMark_left) %in% seq(10,90,by = 10)),] <- 0
@@ -71,13 +66,11 @@ myColors_left_inner <- rgb(191,239,255,100,maxColorValue = 255)
 myColors_right <- c(myColors_right_inner,myColors_right_outer)
 myColors_left <- c(myColors_left_inner,myColors_left_outer)
 
-
 myB1 <- barplot(t(right),axes = FALSE,horiz = TRUE,axis.lty = 0,
                 border = NA,col = myColors_right,xlim = c(-750,750))
 myB2 <- barplot(-t(left),axes = FALSE,horiz = TRUE,axis.lty = 0,
                 border = NA,col = myColors_left,xlim = c(-750,750),
                 add = TRUE)
-
 
 barplot(t(myMark_right),axes = FALSE,horiz = TRUE,axis.lty = 0,
         border = NA,col = myColors_right,xlim = c(-750,750),
@@ -85,7 +78,6 @@ barplot(t(myMark_right),axes = FALSE,horiz = TRUE,axis.lty = 0,
 barplot(-t(myMark_left),axes = FALSE,horiz = TRUE,axis.lty = 0,
         border = NA,col = myColors_left,xlim = c(-750,750),
         add = TRUE)
-
 
 abline(v = 0,lwd = 25,col = par('bg'))
 
@@ -111,22 +103,17 @@ mtext('Year 1970',side = 3,line = 0,adj = 0.5,cex = 1.25,font = 3,
 myWomen$Y2010-myMen$Y2010 -> myWomenSurplus
 ifelse(myWomenSurplus < 0,0,myWomenSurplus) -> myWomenSurplus
 
-
 myMen$Y2010 - myWomen$Y2010 -> myMenSurplus
 ifelse(myMenSurplus < 0,0,myMenSurplus) -> myMenSurplus
-
 
 right <- data.frame(myWomen$Y2010-myWomenSurplus,myWomenSurplus)
 left <- data.frame(myMen$Y2010-myMenSurplus,myMenSurplus)
 
-
 myMark_right <- right
 myMark_right[!(rownames(myMark_right) %in% seq(10,90,by = 10)),] <- 0
 
-
 myMark_left <- left
 myMark_left[!(rownames(myMark_left) %in% seq(10,90,by = 10)),] <- 0
-
 
 myColors_right_outer <- rgb(255,0,210,50,maxColorValue = 255)
 myColors_right_inner <- rgb(255,0,210,120,maxColorValue = 255)
@@ -136,13 +123,11 @@ myColors_left_inner <- rgb(191,239,255,100,maxColorValue = 255)
 myColors_right <- c(myColors_right_inner,myColors_right_outer)
 myColors_left <- c(myColors_left_inner,myColors_left_outer)
 
-
 myB1 <- barplot(t(right),axes = FALSE,horiz = TRUE,axis.lty = 0,
                 border = NA,col = myColors_right,xlim = c(-750,750))
 myB2 <- barplot(-t(left),axes = FALSE,horiz = TRUE,axis.lty = 0,
                 border = NA,col = myColors_left,xlim = c(-750,750),
                 add = TRUE)
-
 
 barplot(t(myMark_right),axes = FALSE,horiz = TRUE,axis.lty = 0,
         border = NA,col = myColors_right,xlim = c(-750,750),
@@ -151,9 +136,7 @@ barplot(-t(myMark_left),axes = FALSE,horiz = TRUE,axis.lty = 0,
         border = NA,col = myColors_left,xlim = c(-750,750),
         add = TRUE)
 
-
 abline(v = 0,lwd = 25,col = par('bg'))
-
 mtext(abs(seq(-600,600,by = 200)),at = seq(-600,600,by = 200),
       side = 1,line = -1,cex = 0.8)
 
@@ -184,10 +167,6 @@ mtext('Note: Outer highlighed areas: surplus of women and men.',
 
 
 dev.off()
-
-
-
-
 
 pdf_convert(
   
