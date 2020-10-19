@@ -4,9 +4,6 @@ library(tidyverse)
 library(pdftools)
 library(graphics)
 
-
-
-
 myC_v159 <- "A working mother can establish just as warm and\nsecure an environment as a non-working mother"
 myC_v160 <- "A pre-school child is likely to suffer if\nhis or her mother is working"
 myC_v161 <- "A job is alright, but what most women\nreally want is a home and children"
@@ -35,7 +32,6 @@ par(
   family = 'Lato Light',
   las = 1)
 
-
 bp <- barplot(df,names.arg = FALSE,
               horiz = TRUE,
               border = NA,
@@ -47,13 +43,11 @@ bp <- barplot(df,names.arg = FALSE,
 
 myColor <- rgb(255,0,210,maxColorValue = 255)
 
-
 rect(0,-0.1,20,8.6,col = rgb(191,239,255,80,maxColorValue = 255),border = NA)
 rect(20,-0.1,40,8.6,col = rgb(191,239,255,120,maxColorValue = 255),border = NA)
 rect(40,-0.1,60,8.6,col = rgb(191,239,255,80,maxColorValue = 255),border = NA)
 rect(60,-0.1,80,8.6,col = rgb(191,239,255,120,maxColorValue = 255),border = NA)
 rect(80,-0.1,100,8.6,col = rgb(191,239,255,80,maxColorValue = 255),border = NA)
-
 
 bp <- barplot(df2,
               names.arg = FALSE,
@@ -84,11 +78,9 @@ for (i in 1:length(myNames)) {
   
 }
 
-
 arrows(50,-0.1,50,8.8,lwd = 1.5,length = 0,xpd = TRUE,col = 'skyblue3')
 arrows(50,-0.25,50,-0.1,lwd = 5,length = 0,xpd = TRUE)
 arrows(50,8.8,50,8.95,lwd = 5,length = 0,xpd = TRUE)
-
 
 text(48,8.9,'Majority',adj = 1,xpd = TRUE,cex = 0.9,font = 3)
 text(52,8.9,'50%',adj = 0,xpd = TRUE,cex = 0.9,font = 3,family = 'Lato Bold')
@@ -97,7 +89,6 @@ mtext(seq(0,100,by = 20),at = seq(0,100,by = 20),1,line = 0.75)
 
 # Titles for margins
 
-
 mtext('It is often said that attitudes towards gender roles are changing',
       side = 3,line = 2,adj = 0,cex = 1.8,family = 'Lato Black',outer = TRUE)
 mtext('The answers are:',side = 3,line = 0.5,adj = 0,cex = 1.5,outer = TRUE)
@@ -105,10 +96,7 @@ mtext('Redesign: Phan Tien Dung\nUniversity of Tuebingen,Germany',
       side = 1,line = 0,adj = 1,cex = 1,outer = TRUE,font = 3,
       family = 'Lato Black')
 
-
-
 dev.off()
-
 
 pdf_convert(
   
