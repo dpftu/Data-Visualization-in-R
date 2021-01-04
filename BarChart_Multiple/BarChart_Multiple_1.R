@@ -14,50 +14,25 @@ myC_v165 <- "In general, fathers are as well suited to\nlook after their childre
 myC_v166 <- "Men should take as much responsibility\nas women for their household and children"
 myNames <- c(myC_v165, myC_v164, myC_v163, myC_v162, myC_v161, myC_v160, myC_v159)
 
-
 df <- c(70.1,84.7,84.8,35.5,33.1,47.2,76.4)
 df2 <- vector('double',length(df))
 df2[which(df == 84.8)] <- df[which(df == 84.8)]
 
-
-
 pdf_file <- 'BarCharts_Multiple.pdf'
 cairo_pdf(pdf_file,bg = 'grey98',width = 13,height = 10.5)
 
-par(
-  
-  omi = c(0.65,0.75,1.25,0.75),
-  mai = c(0.9,3.85,0.55,0),
-  lheight = 1.15,
-  family = 'Lato Light',
-  las = 1)
+par(omi = c(0.65,0.75,1.25,0.75), mai = c(0.9,3.85,0.55,0), lheight = 1.15, family = 'Lato Light', las = 1)
 
-bp <- barplot(df,names.arg = FALSE,
-              horiz = TRUE,
-              border = NA,
-              xlim = c(0,100),
-              col = 'grey',
-              axes = FALSE,
-              family = 'Lato')
-
+bp <- barplot(df, names.arg = FALSE, horiz = TRUE, border = NA, xlim = c(0,100), col = 'grey', axes = FALSE, family = 'Lato')
 
 myColor <- rgb(255,0,210,maxColorValue = 255)
-
 rect(0,-0.1,20,8.6,col = rgb(191,239,255,80,maxColorValue = 255),border = NA)
 rect(20,-0.1,40,8.6,col = rgb(191,239,255,120,maxColorValue = 255),border = NA)
 rect(40,-0.1,60,8.6,col = rgb(191,239,255,80,maxColorValue = 255),border = NA)
 rect(60,-0.1,80,8.6,col = rgb(191,239,255,120,maxColorValue = 255),border = NA)
 rect(80,-0.1,100,8.6,col = rgb(191,239,255,80,maxColorValue = 255),border = NA)
 
-bp <- barplot(df2,
-              names.arg = FALSE,
-              horiz = TRUE,
-              border = NA,
-              xlim = c(0,100),
-              col = myColor,
-              axes = FALSE,
-              add = TRUE)
-
+bp <- barplot(df2, names.arg = FALSE, horiz = TRUE, border = NA, xlim = c(0,100), col = myColor, axes = FALSE, add = TRUE)
 
 # Other Elements
 
@@ -97,22 +72,4 @@ mtext('Redesign: Phan Tien Dung\nUniversity of Tuebingen,Germany',
       family = 'Lato Black')
 
 dev.off()
-
-pdf_convert(
-  
-  
-  pdf = pdf_file,
-  format = 'png',
-  pages = NULL,
-  filenames = NULL,
-  dpi = 72,
-  antialias = TRUE,
-  opw = '',
-  upw = '',
-  verbose = TRUE
-  
-  
-)
-
-
-
+pdf_convert(pdf = pdf_file, format = 'png', pages = NULL, filenames = NULL, dpi = 72, antialias = TRUE, opw = '', upw = '', verbose = TRUE)
